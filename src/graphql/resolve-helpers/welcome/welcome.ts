@@ -1,4 +1,4 @@
-import { GraphQLCookieContext } from "typings/graphql-cookie-context";
+import { Resolver } from "typings/graphql";
 
 interface ArgsProps {
 	payload: {
@@ -6,8 +6,8 @@ interface ArgsProps {
 	};
 }
 
-//Context and Info can also be used as parameters
-export const welcome = async (parent: void, args: ArgsProps, context: GraphQLCookieContext) => {
+// Context and Info can also be used as parameters
+export const welcome: Resolver<ArgsProps> = async (parent, args, context) => {
 	const { payload } = args;
 
 	const { authToken } = context;
@@ -16,6 +16,7 @@ export const welcome = async (parent: void, args: ArgsProps, context: GraphQLCoo
 
 	return {
 		success: true,
+		data: undefined,
 		message: `${payload.name}, Welcome to the GraphQL section`,
 	};
 };
