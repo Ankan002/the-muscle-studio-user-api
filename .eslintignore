@@ -1,3 +1,5 @@
 node_modules
 build
 /src/@types/express
+commitlint.config.ts
+jest.config.ts

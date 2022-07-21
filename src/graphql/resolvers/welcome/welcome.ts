@@ -1,4 +1,4 @@
-import { welcome } from "../../resolve-helpers";
+import { welcome } from "graphql/resolve-helpers";
 
 export const welcomeResolver = {
 	Query: {

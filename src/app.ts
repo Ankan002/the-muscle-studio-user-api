@@ -1,16 +1,17 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
-import cookieParser from "cookie-parser";
 import expressFileUpload from "express-fileupload";
 import { ApolloServer } from "apollo-server-express";
 import { welcomeTypeDefs } from "graphql/typeDefs";
 import { welcomeResolver } from "graphql/resolvers";
+import cookieParser from "cookie-parser";
+
 import { welcomeRouter } from "routes/welcome";
 import { origins } from "constants/cors-origins";
 
 const startServer = async () => {
 	const app = express();
-	const PORT = process.env["PORT"] ?? "";
+	const PORT = process.env["PORT"];
 
 	app.use(
 		cors({
@@ -18,8 +19,8 @@ const startServer = async () => {
 			origin: origins,
 		})
 	);
-	app.use(cookieParser());
 	app.use(express.json());
+	app.use(cookieParser());
 	app.use(
 		expressFileUpload({
 			useTempFiles: true,
@@ -30,7 +31,7 @@ const startServer = async () => {
 		typeDefs: [welcomeTypeDefs],
 		resolvers: [welcomeResolver],
 		context: (context) => {
-			const authToken = context.req.cookies.authToken;
+			const authToken = context.req.cookies?.authToken;
 			return {
 				authToken,
 			};
@@ -41,10 +42,11 @@ const startServer = async () => {
 
 	apolloServer.applyMiddleware({ app });
 
-	app.get("/", (_: Request, res: Response) => {
+	app.get("/", (req: Request, res: Response) => {
+		console.log(req.user);
 		res.status(200).json({
 			success: true,
-			message: "Welcome to The Muscle Studio user API",
+			message: "Welcome to gym management shop API",
 		});
 	});
 
