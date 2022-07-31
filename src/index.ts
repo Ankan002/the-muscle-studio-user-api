@@ -1,5 +1,5 @@
 import { config } from "dotenv";
-import { logger } from "utils";
+import { logger } from "utils/logger";
 import startServer from "./app";
 
 config();

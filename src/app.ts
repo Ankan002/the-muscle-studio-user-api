@@ -9,7 +9,7 @@ import cookieParser from "cookie-parser";
 import { welcomeRouter } from "routes/welcome";
 import { origins } from "constants/cors-origins";
 import { morganConfig } from "middlewares/morgan-config";
-import { logger } from "utils";
+import { logger } from "utils/logger";
 
 const startServer = async () => {
 	const app = express();

@@ -1,5 +1,5 @@
 import { Resolver } from "typings/graphql";
-import { logger } from "utils";
+import { logger } from "utils/logger";
 
 interface ArgsProps {
 	payload: {
