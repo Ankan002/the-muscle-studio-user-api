@@ -1,4 +1,5 @@
 import { Resolver } from "typings/graphql";
+import { logger } from "utils";
 
 interface ArgsProps {
 	payload: {
@@ -12,7 +13,7 @@ export const welcome: Resolver<ArgsProps> = async (parent, args, context) => {
 
 	const { authToken } = context;
 
-	console.log(authToken);
+	logger.debug(authToken);
 
 	return {
 		success: true,

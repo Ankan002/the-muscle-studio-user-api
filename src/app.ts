@@ -8,6 +8,8 @@ import cookieParser from "cookie-parser";
 
 import { welcomeRouter } from "routes/welcome";
 import { origins } from "constants/cors-origins";
+import { morganConfig } from "middlewares/morgan-config";
+import { logger } from "utils";
 
 const startServer = async () => {
 	const app = express();
@@ -21,6 +23,7 @@ const startServer = async () => {
 	);
 	app.use(express.json());
 	app.use(cookieParser());
+	app.use(morganConfig);
 	app.use(
 		expressFileUpload({
 			useTempFiles: true,
@@ -43,7 +46,7 @@ const startServer = async () => {
 	apolloServer.applyMiddleware({ app });
 
 	app.get("/", (req: Request, res: Response) => {
-		console.log(req.user);
+		logger.debug(req.user);
 		res.status(200).json({
 			success: true,
 			message: "Welcome to gym management shop API",
@@ -52,7 +55,7 @@ const startServer = async () => {
 
 	app.use("/api", welcomeRouter);
 
-	app.listen(PORT, () => console.log(`App is running at Port: ${PORT}`));
+	app.listen(PORT, () => logger.info(`App is running at Port: ${PORT}`));
 };
 
 export default startServer;
