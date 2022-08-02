@@ -15,4 +15,5 @@ jobs:
       - run: npm i --location=global yarn
       - run: yarn
       - run: yarn test
+      - run: yarn build
       - run: echo "Deploy done... 🤯"
