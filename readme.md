@@ -33,7 +33,7 @@ This is the Users API for the Muscle Studio API.
 
 5. List the following environment varibales inside ``.env`` file:
 
-    - PORT: The post number on which the app would be running.
+    - PORT: The port number on which the app would be running.
     - NODE_ENV:  ``development`` | ``production``.
 
 # Contributors 🧑‍💻
