@@ -51,6 +51,9 @@
       ],
       "utils/*": [
         "./utils/*"
+      ],
+      "config/*": [
+        "./config/*"
       ]
     },
   },

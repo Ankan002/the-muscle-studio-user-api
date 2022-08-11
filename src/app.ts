@@ -10,6 +10,7 @@ import { welcomeRouter } from "routes/welcome";
 import { origins } from "constants/cors-origins";
 import { morganConfig } from "middlewares/morgan-config";
 import { logger } from "utils/logger";
+import { connectToDB } from "config/connect-db";
 
 const startServer = async () => {
 	const app = express();
@@ -29,6 +30,8 @@ const startServer = async () => {
 			useTempFiles: true,
 		})
 	);
+
+	connectToDB();
 
 	const apolloServer = new ApolloServer({
 		typeDefs: [welcomeTypeDefs],
