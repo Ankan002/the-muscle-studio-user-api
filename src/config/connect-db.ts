@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
+import { logger } from "utils/logger";
 
 export const connectToDB = () => {
 	mongoose
 		.connect(process.env["DB_URI"] ?? "")
-		.then(() => console.log("Connected to DB"))
-		.catch((e) => console.log(e));
+		.then(() => logger.info("Connected to DB"))
+		.catch((e) => logger.error(e));
 };
