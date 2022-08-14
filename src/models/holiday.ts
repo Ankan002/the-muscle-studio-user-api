@@ -10,7 +10,7 @@ enum Weekdays {
 	monday = "monday",
 	tuesday = "tuesday",
 	wednesday = "wednesday",
-	thurday = "thursday",
+	thursday = "thursday",
 	friday = "friday",
 	saturday = "saturday",
 	sunday = "sunday",
