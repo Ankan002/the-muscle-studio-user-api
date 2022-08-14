@@ -15,8 +15,8 @@ const dailySchedule = new Schema<DailyScheduleSchema>({
 	name: {
 		type: String,
 		required: true,
-		min: 5,
-		max: 40,
+		minlength: 5,
+		maxlength: 40,
 	},
 	day: {
 		type: String,
