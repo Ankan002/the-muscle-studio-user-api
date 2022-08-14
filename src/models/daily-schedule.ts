@@ -11,7 +11,7 @@ enum Weekdays {
 	sunday = "sunday",
 }
 
-const dailySchedule = new Schema<DailyScheduleSchema>({
+const dailyScheduleSchema = new Schema<DailyScheduleSchema>({
 	name: {
 		type: String,
 		required: true,
@@ -35,4 +35,4 @@ const dailySchedule = new Schema<DailyScheduleSchema>({
 	},
 });
 
-export const DailySchema = mongoose.model<DailyScheduleSchema>("DailySchedule", dailySchedule);
+export const DailySchema = mongoose.model<DailyScheduleSchema>("DailySchedule", dailyScheduleSchema);
