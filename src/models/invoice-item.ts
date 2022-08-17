@@ -6,17 +6,20 @@ enum PlanDuration {
 	yearly = "yearly",
 }
 
-const invoiceItemSchema = new Schema<InvoiceItemSchema>({
-	planId: {
-		type: Schema.Types.ObjectId,
-		required: true,
-		ref: "Plan",
+const invoiceItemSchema = new Schema<InvoiceItemSchema>(
+	{
+		planId: {
+			type: Schema.Types.ObjectId,
+			required: true,
+			ref: "Plan",
+		},
+		duration: {
+			type: String,
+			enum: PlanDuration,
+			required: true,
+		},
 	},
-	duration: {
-		type: String,
-		enum: PlanDuration,
-		required: true,
-	},
-});
+	{ timestamps: true }
+);
 
 export const InvoiceItem = mongoose.model<InvoiceItemSchema>("InvoiceItem", invoiceItemSchema);
