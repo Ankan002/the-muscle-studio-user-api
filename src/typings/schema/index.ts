@@ -7,3 +7,4 @@ export * from "./announcement-schema";
 export * from "./exercise-schema";
 export * from "./session-schema";
 export * from "./admin-schema";
+export * from "./invoice-item-schema";
