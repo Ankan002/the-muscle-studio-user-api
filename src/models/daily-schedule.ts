@@ -24,7 +24,7 @@ const dailyScheduleSchema = new Schema<DailyScheduleSchema>(
 			required: true,
 			enum: Weekdays,
 		},
-		routineId: {
+		routine: {
 			type: Schema.Types.ObjectId,
 			required: true,
 			ref: "Routine",

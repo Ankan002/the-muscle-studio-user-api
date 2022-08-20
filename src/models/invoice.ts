@@ -8,7 +8,7 @@ const invoiceSchema = new Schema<InvoiceSchema>(
 			required: true,
 			min: 0,
 		},
-		userId: {
+		user: {
 			type: Schema.Types.ObjectId,
 			required: true,
 			ref: "User",
@@ -29,6 +29,14 @@ const invoiceSchema = new Schema<InvoiceSchema>(
 			required: true,
 			minlength: 10,
 			maxlength: 10,
+		},
+		razorpayOrderId: {
+			type: String,
+			required: true,
+		},
+		razorpayPaymentId: {
+			type: String,
+			required: true,
 		},
 	},
 	{ timestamps: true }

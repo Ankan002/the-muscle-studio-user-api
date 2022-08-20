@@ -4,6 +4,6 @@ import { Weekdays } from "typings/general";
 export interface DailyScheduleSchema {
 	name: string;
 	day: Weekdays;
-	routineId: ObjectId;
+	routine: ObjectId;
 	exercises: Array<ObjectId>;
 }
