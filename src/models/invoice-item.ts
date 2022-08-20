@@ -8,7 +8,7 @@ enum PlanDuration {
 
 const invoiceItemSchema = new Schema<InvoiceItemSchema>(
 	{
-		planId: {
+		plan: {
 			type: Schema.Types.ObjectId,
 			required: true,
 			ref: "Plan",
