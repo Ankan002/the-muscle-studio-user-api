@@ -3,7 +3,7 @@ import { SessionSchema } from "typings/schema";
 
 const sessionSchema = new Schema<SessionSchema>(
 	{
-		userId: {
+		user: {
 			type: Schema.Types.ObjectId,
 			required: true,
 			ref: "User",

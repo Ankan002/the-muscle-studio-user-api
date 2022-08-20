@@ -1,7 +1,7 @@
 import { ObjectId } from "mongoose";
 
 export interface SessionSchema {
-	userId: ObjectId;
+	user: ObjectId;
 	entryTime: string;
 	exitTime?: string;
 	date: string;
