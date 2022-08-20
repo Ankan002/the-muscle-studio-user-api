@@ -7,6 +7,6 @@ export interface UserSchema {
 	role: "user" | "member";
 	memberTill?: string;
 	password?: string;
-	planId?: ObjectId;
-	routineId?: ObjectId;
+	plan?: ObjectId;
+	routine?: ObjectId;
 }

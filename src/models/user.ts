@@ -41,12 +41,12 @@ const userSchema = new Schema<UserSchema>(
 			type: String,
 			required: false,
 		},
-		planId: {
+		plan: {
 			type: Schema.Types.ObjectId,
 			required: false,
 			ref: "Plan",
 		},
-		routineId: {
+		routine: {
 			type: Schema.Types.ObjectId,
 			required: false,
 			ref: "Routine",
