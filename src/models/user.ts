@@ -26,6 +26,10 @@ const userSchema = new Schema<UserSchema>(
 			minlength: 20,
 			maxlength: 22,
 		},
+		picture: {
+			type: String,
+			required: true,
+		},
 		role: {
 			type: String,
 			enum: Role,

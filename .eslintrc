@@ -31,7 +31,6 @@
 		"no-unreachable": "error",
 		"array-callback-return": "error",
 		"array-bracket-spacing": "error",
-		"array-bracket-newline": "error",
 		"arrow-spacing": "error",
 		"callback-return": "error",
 		"comma-spacing": "error",

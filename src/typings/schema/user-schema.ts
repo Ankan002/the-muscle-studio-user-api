@@ -5,6 +5,7 @@ export interface UserSchema {
 	name: string;
 	providerId: string;
 	role: "user" | "member";
+	picture: string;
 	memberTill?: string;
 	password?: string;
 	plan?: ObjectId;
