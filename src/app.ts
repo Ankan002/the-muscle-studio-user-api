@@ -11,6 +11,7 @@ import { origins } from "constants/cors-origins";
 import { morganConfig } from "middlewares/morgan-config";
 import { logger } from "utils/logger";
 import { connectToDB } from "config/connect-db";
+import { authRouter } from "routes/auth";
 
 const startServer = async () => {
 	const app = express();
@@ -57,6 +58,7 @@ const startServer = async () => {
 	});
 
 	app.use("/api", welcomeRouter);
+	app.use("/api/auth", authRouter);
 
 	app.listen(PORT, () => logger.info(`App is running at Port: ${PORT}`));
 };
